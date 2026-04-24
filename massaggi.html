@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Massaggi — F.B.M Domenico Triolo</title>
+<style>
+:root {
+  --color-text-primary: #1a1a2e;
+  --color-text-secondary: #5a5a7a;
+  --color-background-primary: #ffffff;
+  --color-border-tertiary: #e8e8f0;
+  --color-border-secondary: #c8c8e0;
+  --border-radius-lg: 16px;
+  --border-radius-md: 10px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f4f4f8; min-height: 100vh; }
+.page-wrap { max-width: 960px; margin: 0 auto; padding: 24px 16px 48px; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: #5a5a7a; text-decoration: none; margin-bottom: 20px; padding: 8px 16px; background: white; border-radius: 40px; border: 0.5px solid #e8e8f0; }
+.back-btn:hover { color: #1a1a2e; }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+<a href="index.html" class="back-btn">← Torna alla home</a>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+  .lp { font-family: 'DM Sans', sans-serif; color: var(--color-text-primary); background: transparent; }
+
+  .lp-hero { background: linear-gradient(135deg, #0c2a4a 0%, #042c53 60%, #0a3a5c 100%); color: #fff; padding: 3.5rem 2rem 3rem; position: relative; overflow: hidden; border-radius: var(--border-radius-lg); }
+  .lp-hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; border-radius: 50%; background: #85B7EB; opacity: 0.1; }
+  .lp-hero::after { content: ''; position: absolute; bottom: -80px; left: 25%; width: 220px; height: 220px; border-radius: 50%; background: #B5D4F4; opacity: 0.07; }
+
+  .lp-logo { font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 4px; color: #85B7EB; margin-bottom: 1.8rem; display: flex; align-items: center; gap: 10px; }
+  .lp-logo::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+
+  .lp-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 9vw, 5rem); line-height: 0.95; color: #fff; margin: 0 0 1rem; }
+  .lp-hero h1 em { color: #85B7EB; font-style: normal; }
+  .lp-hero h1 .light { color: rgba(255,255,255,0.3); }
+  .lp-hero-sub { font-size: 15px; color: rgba(255,255,255,0.6); max-width: 440px; margin: 0 0 2rem; line-height: 1.75; font-weight: 300; }
+  .lp-cta-hero { display: inline-flex; align-items: center; gap: 8px; background: #378ADD; color: #fff; font-weight: 500; font-size: 14px; padding: 13px 28px; border-radius: 40px; border: none; cursor: pointer; }
+  .lp-cta-hero:hover { background: #185FA5; }
+  .lp-badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .lp-badge { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; border: 0.5px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.5); }
+
+  .lp-section { padding: 2.5rem 2rem; }
+  .lp-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #378ADD; font-weight: 500; margin-bottom: 6px; }
+  .lp-section-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.1rem; letter-spacing: 0.5px; margin: 0 0 0.3rem; color: var(--color-text-primary); }
+  .lp-section-sub { font-size: 14px; color: var(--color-text-secondary); margin: 0 0 1.8rem; }
+
+  .lp-cat-intro { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
+  .lp-cat-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .dot-r { background: #85B7EB; }
+  .dot-m { background: #378ADD; }
+  .dot-e { background: #B5D4F4; }
+  .dot-en { background: #0C447C; }
+  .lp-cat-label { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 1px; color: var(--color-text-primary); }
+  .lp-cat-desc { font-size: 13px; color: var(--color-text-secondary); margin: 0 0 1.2rem 22px; font-weight: 300; line-height: 1.6; }
+
+  .lp-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 2.5rem; }
+  .lp-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; }
+  .lp-card:hover { border-color: #B5D4F4; }
+  .lp-card-stripe { height: 3px; }
+  .stripe-r { background: linear-gradient(90deg, #85B7EB, #B5D4F4); }
+  .stripe-m { background: linear-gradient(90deg, #378ADD, #85B7EB); }
+  .stripe-e { background: linear-gradient(90deg, #B5D4F4, #E6F1FB); }
+  .stripe-en { background: linear-gradient(90deg, #042C53, #185FA5); }
+
+  .lp-card-body { padding: 1rem 1.1rem; }
+  .lp-card h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.5px; margin: 0 0 6px; color: var(--color-text-primary); }
+  .lp-card p { font-size: 12.5px; color: var(--color-text-secondary); line-height: 1.6; margin: 0 0 8px; font-weight: 300; }
+  .lp-card-tag { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #185FA5; background: #E6F1FB; padding: 3px 8px; border-radius: 20px; display: inline-block; }
+
+  .lp-divider { height: 0.5px; background: var(--color-border-tertiary); margin: 0 2rem; }
+
+  .lp-sauna { margin: 0 2rem 2rem; background: linear-gradient(135deg, #E6F1FB, #f0f6fd); border: 0.5px solid #B5D4F4; border-radius: var(--border-radius-lg); padding: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .lp-sauna h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: #042C53; margin: 0 0 8px; grid-column: 1/-1; }
+  .lp-sauna-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #185FA5; background: #fff; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 10px; border: 0.5px solid #B5D4F4; }
+  .lp-sauna p { font-size: 13px; color: #0c2a4a; line-height: 1.65; margin: 0; font-weight: 300; }
+  .lp-sauna-note { font-size: 11.5px; color: #185FA5; background: #fff; border: 0.5px solid #B5D4F4; border-radius: var(--border-radius-md); padding: 10px 12px; line-height: 1.5; }
+  .lp-sauna-note strong { font-weight: 500; color: #042C53; display: block; margin-bottom: 3px; }
+
+  .lp-process { padding: 2.5rem 2rem; background: #f0f6fd; border-radius: var(--border-radius-lg); margin: 2px 0; }
+  .lp-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 1.5rem; }
+  .lp-step { background: #fff; border: 0.5px solid #B5D4F4; border-radius: var(--border-radius-lg); padding: 1.1rem 1rem; }
+  .lp-step-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: #378ADD; line-height: 1; margin-bottom: 8px; }
+  .lp-step h4 { font-size: 13px; font-weight: 500; margin: 0 0 4px; color: #042C53; }
+  .lp-step p { font-size: 12px; color: #185FA5; margin: 0; line-height: 1.55; }
+
+  .lp-why { padding: 2.5rem 2rem; }
+  .lp-bullets { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .lp-bullets li { font-size: 13.5px; color: var(--color-text-primary); padding: 14px 16px; background: var(--color-background-primary); border: 0.5px solid #B5D4F4; border-left: 3px solid #378ADD; border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; }
+  .lp-bullets li span { display: block; font-size: 12px; color: var(--color-text-secondary); margin-top: 3px; font-weight: 300; }
+
+  .lp-cta-section { padding: 3rem 2rem; background: linear-gradient(135deg, #0c2a4a 0%, #042c53 100%); border-radius: var(--border-radius-lg); margin-top: 2px; text-align: center; }
+  .lp-cta-section h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2.3rem; color: #fff; margin: 0 0 0.5rem; }
+  .lp-cta-section p { font-size: 14px; color: rgba(255,255,255,0.5); margin: 0 0 1.8rem; font-weight: 300; }
+  .lp-cta-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .lp-cta-primary { background: #378ADD; color: #fff; font-size: 14px; font-weight: 500; padding: 13px 32px; border-radius: 40px; border: none; cursor: pointer; }
+  .lp-cta-primary:hover { background: #185FA5; }
+  .lp-cta-secondary { background: transparent; color: rgba(255,255,255,0.65); font-size: 14px; padding: 13px 32px; border-radius: 40px; border: 0.5px solid rgba(255,255,255,0.2); cursor: pointer; }
+  .lp-footer-note { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 1.5rem; letter-spacing: 0.5px; }
+</style>
+
+<div class="lp">
+
+  <div class="lp-hero">
+    <div class="lp-logo">F.B.M — FITNESS BENESSERE MASSAGGI</div>
+    <div class="lp-badge-row">
+      <span class="lp-badge">Massaggi</span>
+      <span class="lp-badge">Meda &amp; dintorni</span>
+      <span class="lp-badge">Dal 2018</span>
+    </div>
+    <h1>Rilassati.<br><em>Recupera.</em><br><span class="light">Riequilibrati.</span></h1>
+    <p class="lp-hero-sub">Non sai quale massaggio fa per te? Nessun problema — ti ascolto e ti indirizzo io. Ogni trattamento parte da come stai, non da un listino standard.</p>
+    <button class="lp-cta-hero" onclick="sendPrompt('Voglio prenotare un massaggio con Domenico')">Prenota una sessione →</button>
+  </div>
+
+  <div class="lp-section">
+    <div class="lp-label">I trattamenti</div>
+    <div class="lp-section-title">Quattro aree, un solo obiettivo</div>
+    <div class="lp-section-sub">Scegli la categoria che più ti rappresenta — o lasciati guidare.</div>
+
+    <div class="lp-cat-intro">
+      <div class="lp-cat-dot dot-r"></div>
+      <div class="lp-cat-label">Rilassanti</div>
+    </div>
+    <div class="lp-cat-desc">Per staccare dalla vita quotidiana, dormire meglio e allentare la tensione — nel corpo e nella mente.</div>
+    <div class="lp-cards">
+      <div class="lp-card">
+        <div class="lp-card-stripe stripe-r"></div>
+        <div class="lp-card-body">
+          <h4>Massaggio Antistress</h4>
+          <p>Rilassa corpo ed energia in profondità. Favorisce un sonno più profondo e aiuta a ritrovare equilibrio dopo periodi di tensione. Va bene per tutti.</p>
+          <span class="lp-card-tag">Per tutti</span>
+        </div>
+      </div>
+      <div class="lp-card">
+        <div class="lp-card-stripe stripe-r"></div>
+        <div class="lp-card-body">
+          <h4>Stone Massage</h4>
+          <p>Massaggio con pietre calde. Scioglie le tensioni muscolari in modo profondo e delicato — ideale dopo periodi di forte stress fisico o emotivo.</p>
+          <span class="lp-card-tag">Rilassante profondo</span>
+        </div>
+      </div>
+      <div class="lp-card">
+        <div class="lp-card-stripe stripe-r"></div>
+        <div class="lp-card-body">
+          <h4>Massaggio Svedese</h4>
+          <p>Il massaggio ideale per chi non ha mai provato. Alleggerisce tutta la muscolatura e mette a proprio agio anche chi si approccia per la prima volta.</p>
+          <span class="lp-card-tag">Prima esperienza</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lp-cat-intro">
+      <div class="lp-cat-dot dot-m"></div>
+      <div class="lp-cat-label">Muscolari</div>
+    </div>
+    <div class="lp-cat-desc">Per recuperare dopo allenamenti intensi, sciogliere contratture e prevenire infortuni. Adatti a sportivi e non.</div>
+    <div class="lp-cards">
+      <div class="lp-card">
+        <div class="lp-card-stripe stripe-m"></div>
+        <div class="lp-card-body">
+          <h4>Decontratturante / Sportivo</h4>
+          <p>Scioglie le contratture, sblocca le articolazioni e previene gli infortuni. Molto utile agli sportivi — agonistici e non — e a chi accumula tensioni muscolari da lavoro o stress.</p>
+          <span class="lp-card-tag">Sportivi &amp; non</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lp-cat-intro">
+      <div class="lp-cat-dot dot-e"></div>
+      <div class="lp-cat-label">Estetici</div>
+    </div>
+    <div class="lp-cat-desc">Per migliorare l'aspetto fisico e la consapevolezza di sé. Trattamenti mirati su viso, gambe e addome.</div>
+    <div class="lp-cards">
+      <div class="lp-card">
+        <div class="lp-card-stripe stripe-e"></div>
+        <div class="lp-card-body">
+          <h4>Massaggio Drenante</h4>
+          <p>Ideale per chi sente le gambe pesanti o ha ritenzione idrica. Defluisce i liquidi in eccesso e tonifica la muscolatura. Rivolto anche agli uomini.</p>
+          <span class="lp-card-tag">Gambe pesanti</span>
+        </div>
+      </div>
+      <div class="lp-card">
+        <div class="lp-card-stripe stripe-e"></div>
+        <div class="lp-card-body">
+          <h4>Anticellulite</h4>
+          <p>Agisce in profondità su gambe e glutei. Utilizza la coppettazione per rompere e drenare la cellulite in modo efficace e mirato.</p>
+          <span class="lp-card-tag">Gambe &amp; glutei</span>
+        </div>
+      </div>
+      <div class="lp-card">
+        <div class="lp-card-stripe stripe-e"></div>
+        <div class="lp-card-body">
+          <h4>Pancia Piatta</h4>
+          <p>Drena i liquidi in eccesso accumulati nell'addome e tonifica la zona addominale. Ottimo abbinato a un percorso fitness.</p>
+          <span class="lp-card-tag">Addome</span>
+        </div>
+      </div>
+      <div class="lp-card">
+        <div class="lp-card-stripe stripe-e"></div>
+        <div class="lp-card-body">
+          <h4>Gua Sha Viso</h4>
+          <p>Massaggio drenante, tonificante e rilassante per il viso. Combina passaggi manuali e pietre per un effetto luminoso e distensivo.</p>
+          <span class="lp-card-tag">Viso</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lp-cat-intro">
+      <div class="lp-cat-dot dot-en"></div>
+      <div class="lp-cat-label">Energetici</div>
+    </div>
+    <div class="lp-cat-desc">Per riequilibrare il campo energetico del corpo, dovuto a stress, tensioni accumulate o eventi della storia personale.</div>
+    <div class="lp-cards">
+      <div class="lp-card">
+        <div class="lp-card-stripe stripe-en"></div>
+        <div class="lp-card-body">
+          <h4>Soul Contact</h4>
+          <p>Ottimo per chi vuole liberare la mente e allentare i pensieri. Agisce sul piano energetico e mentale con grande delicatezza.</p>
+          <span class="lp-card-tag">Mente &amp; energia</span>
+        </div>
+      </div>
+      <div class="lp-card">
+        <div class="lp-card-stripe stripe-en"></div>
+        <div class="lp-card-body">
+          <h4>Rituale Hawaiano</h4>
+          <p>Tecnica antica e armoniosa che lavora su tutto il corpo in modo fluido, come una danza. Coinvolge contemporaneamente parte inferiore e superiore — un'esperienza unica.</p>
+          <span class="lp-card-tag">Corpo intero</span>
+        </div>
+      </div>
+      <div class="lp-card">
+        <div class="lp-card-stripe stripe-en"></div>
+        <div class="lp-card-body">
+          <h4>Riequilibrante Chakra</h4>
+          <p>Riequilibra le energie del corpo partendo da problematiche profonde o recenti. Ideale per chi sente uno squilibrio interiore difficile da spiegare.</p>
+          <span class="lp-card-tag">Equilibrio interiore</span>
+        </div>
+      </div>
+      <div class="lp-card">
+        <div class="lp-card-stripe stripe-en"></div>
+        <div class="lp-card-body">
+          <h4>Californiano</h4>
+          <p>Uno dei primi massaggi riabilitativi della storia. Sblocca spalle e ginocchia e restituisce leggerezza fisica ed emotiva — per corpo e spirito insieme.</p>
+          <span class="lp-card-tag">Corpo &amp; spirito</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lp-sauna">
+    <h3>Body Sauna — il trattamento top</h3>
+    <div>
+      <div class="lp-sauna-tag">Trattamento speciale</div>
+      <p>Aiuta a eliminare i liquidi in eccesso e favorisce il recupero muscolare in profondità. L'effetto è ancora più intenso se abbinato a un massaggio linfodrenante o decontratturante.</p>
+    </div>
+    <div class="lp-sauna-note">
+      <strong>Controindicazioni</strong>
+      Non indicato per donne in gravidanza, persone con pacemaker o bypass. In caso di dubbi, contattaci prima di prenotare.
+    </div>
+  </div>
+
+  <div class="lp-process">
+    <div class="lp-label">Come funziona</div>
+    <div class="lp-section-title">Il metodo F.B.M</div>
+    <div class="lp-section-sub">Ogni trattamento inizia con un ascolto.</div>
+    <div class="lp-steps">
+      <div class="lp-step">
+        <div class="lp-step-num">01</div>
+        <h4>Mi racconti come stai</h4>
+        <p>Prima di iniziare ascolto il tuo corpo, le tue tensioni e la tua storia.</p>
+      </div>
+      <div class="lp-step">
+        <div class="lp-step-num">02</div>
+        <h4>Scegliamo insieme</h4>
+        <p>Ti indirizzo verso il massaggio più adatto — non quello più costoso.</p>
+      </div>
+      <div class="lp-step">
+        <div class="lp-step-num">03</div>
+        <h4>Ambiente riservato</h4>
+        <p>Solo io e te. Nessuna confusione, nessun imbarazzo. Uno spazio di cura.</p>
+      </div>
+      <div class="lp-step">
+        <div class="lp-step-num">04</div>
+        <h4>Percorso su misura</h4>
+        <p>Se serve un ciclo di trattamenti, lo costruiamo insieme con obiettivi chiari.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lp-why">
+    <div class="lp-label">Perché scegliere F.B.M</div>
+    <div class="lp-section-title">Non un centro estetico. Una cura vera.</div>
+    <ul class="lp-bullets">
+      <li>Ascolto prima di tutto
+        <span>Ogni sessione parte da chi sei e da come stai — non da un menu fisso.</span>
+      </li>
+      <li>Fitness e massaggi insieme
+        <span>Puoi integrare il percorso sportivo con quello di recupero e benessere.</span>
+      </li>
+      <li>Ambiente privato e riservato
+        <span>Solo tu e Domenico — nessuna sala affollata, nessun disagio.</span>
+      </li>
+      <li>Dal 2018 con passione
+        <span>Qualifica di maestro di massaggio e anni di esperienza sul campo.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="lp-cta-section">
+    <h2>Hai bisogno di staccare?</h2>
+    <p>Una chiamata è sufficiente per capire qual è il trattamento giusto per te.</p>
+    <div class="lp-cta-group">
+      <button class="lp-cta-primary" onclick="sendPrompt('Voglio informazioni sui massaggi di Domenico')">Chiedi informazioni →</button>
+      <button class="lp-cta-secondary" onclick="sendPrompt('Qual è il massaggio giusto per me?')">Aiutami a scegliere</button>
+    </div>
+    <div class="lp-footer-note">f.b.mdomenicotriolo@virgilio.it · Meda, disponibile entro 11km a domicilio</div>
+  </div>
+
+</div>
+
+</div>
+<script>function sendPrompt(t) { window.location.href = 'index.html'; }</script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corsi Fitness — F.B.M Domenico Triolo</title>
+<style>
+:root {
+  --color-text-primary: #1a1a2e;
+  --color-text-secondary: #5a5a7a;
+  --color-background-primary: #ffffff;
+  --color-border-tertiary: #e8e8f0;
+  --color-border-secondary: #c8c8e0;
+  --border-radius-lg: 16px;
+  --border-radius-md: 10px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f4f4f8; min-height: 100vh; }
+.page-wrap { max-width: 960px; margin: 0 auto; padding: 24px 16px 48px; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: #5a5a7a; text-decoration: none; margin-bottom: 20px; padding: 8px 16px; background: white; border-radius: 40px; border: 0.5px solid #e8e8f0; }
+.back-btn:hover { color: #1a1a2e; }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+<a href="index.html" class="back-btn">← Torna alla home</a>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+  .lp { font-family: 'DM Sans', sans-serif; color: var(--color-text-primary); background: transparent; }
+
+  .lp-hero { background: linear-gradient(135deg, #1a4a2e 0%, #0f3320 60%, #1a4035 100%); color: #fff; padding: 3.5rem 2rem 3rem; position: relative; overflow: hidden; border-radius: var(--border-radius-lg); }
+  .lp-hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; border-radius: 50%; background: #5DCAA5; opacity: 0.1; }
+  .lp-hero::after { content: ''; position: absolute; bottom: -80px; left: 25%; width: 220px; height: 220px; border-radius: 50%; background: #9FE1CB; opacity: 0.07; }
+
+  .lp-logo { font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 4px; color: #5DCAA5; margin-bottom: 1.8rem; display: flex; align-items: center; gap: 10px; }
+  .lp-logo::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+
+  .lp-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 9vw, 5rem); line-height: 0.95; color: #fff; margin: 0 0 1rem; }
+  .lp-hero h1 em { color: #5DCAA5; font-style: normal; }
+  .lp-hero h1 .light { color: rgba(255,255,255,0.3); }
+
+  .lp-hero-sub { font-size: 15px; color: rgba(255,255,255,0.6); max-width: 420px; margin: 0 0 2rem; line-height: 1.75; font-weight: 300; }
+
+  .lp-cta-hero { display: inline-flex; align-items: center; gap: 8px; background: #1D9E75; color: #fff; font-weight: 500; font-size: 14px; padding: 13px 28px; border-radius: 40px; border: none; cursor: pointer; }
+  .lp-cta-hero:hover { background: #0f6e56; }
+
+  .lp-badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .lp-badge { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; border: 0.5px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.5); }
+
+  .lp-section { padding: 2.5rem 2rem; }
+  .lp-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #1D9E75; font-weight: 500; margin-bottom: 6px; }
+  .lp-section-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.1rem; letter-spacing: 0.5px; margin: 0 0 0.3rem; color: var(--color-text-primary); }
+  .lp-section-sub { font-size: 14px; color: var(--color-text-secondary); margin: 0 0 2rem; }
+
+  .lp-courses { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 14px; }
+  .lp-course { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; }
+  .lp-course:hover { border-color: var(--color-border-secondary); }
+  .lp-course-stripe { height: 4px; }
+  .stripe-hit { background: linear-gradient(90deg, #1D9E75, #5DCAA5); }
+  .stripe-posturale { background: linear-gradient(90deg, #0f6e56, #1D9E75); }
+  .stripe-tono { background: linear-gradient(90deg, #5DCAA5, #9FE1CB); }
+  .stripe-dolce { background: linear-gradient(90deg, #9FE1CB, #E1F5EE); }
+
+  .lp-course-top { padding: 1.2rem 1.25rem 1rem; }
+  .lp-course-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; margin-bottom: 10px; display: inline-block; padding: 3px 10px; border-radius: 20px; background: #e1f5ee; color: #0f6e56; }
+
+  .lp-course h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.5px; margin: 0 0 8px; color: var(--color-text-primary); }
+  .lp-course p { font-size: 13.5px; color: var(--color-text-secondary); line-height: 1.65; margin: 0; font-weight: 300; }
+  .lp-course-footer { border-top: 0.5px solid var(--color-border-tertiary); padding: 10px 1.25rem; display: flex; gap: 6px; flex-wrap: wrap; }
+  .lp-pill { font-size: 11px; color: #0f6e56; background: #e1f5ee; padding: 3px 10px; border-radius: 20px; }
+
+  .lp-divider { height: 0.5px; background: var(--color-border-tertiary); margin: 0 2rem; }
+
+  .lp-process { padding: 2.5rem 2rem; background: #f0faf6; border-radius: var(--border-radius-lg); margin: 2px 0; }
+  .lp-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 1.5rem; }
+  .lp-step { background: #fff; border: 0.5px solid #9FE1CB; border-radius: var(--border-radius-lg); padding: 1.1rem 1rem; }
+  .lp-step-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: #1D9E75; line-height: 1; margin-bottom: 8px; }
+  .lp-step h4 { font-size: 13px; font-weight: 500; margin: 0 0 4px; color: #0f3320; }
+  .lp-step p { font-size: 12px; color: #3a6a50; margin: 0; line-height: 1.55; }
+
+  .lp-why { padding: 2.5rem 2rem; }
+  .lp-bullets { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .lp-bullets li { font-size: 13.5px; color: var(--color-text-primary); padding: 14px 16px; background: var(--color-background-primary); border: 0.5px solid #9FE1CB; border-left: 3px solid #1D9E75; border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; }
+  .lp-bullets li span { display: block; font-size: 12px; color: var(--color-text-secondary); margin-top: 3px; font-weight: 300; }
+
+  .lp-cta-section { padding: 3rem 2rem; background: linear-gradient(135deg, #1a4a2e 0%, #0f3320 100%); border-radius: var(--border-radius-lg); margin-top: 2px; text-align: center; }
+  .lp-cta-section h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2.3rem; color: #fff; margin: 0 0 0.5rem; }
+  .lp-cta-section p { font-size: 14px; color: rgba(255,255,255,0.5); margin: 0 0 1.8rem; font-weight: 300; }
+  .lp-cta-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .lp-cta-primary { background: #1D9E75; color: #fff; font-size: 14px; font-weight: 500; padding: 13px 32px; border-radius: 40px; border: none; cursor: pointer; }
+  .lp-cta-primary:hover { background: #0f6e56; }
+  .lp-cta-secondary { background: transparent; color: rgba(255,255,255,0.65); font-size: 14px; padding: 13px 32px; border-radius: 40px; border: 0.5px solid rgba(255,255,255,0.2); cursor: pointer; }
+  .lp-footer-note { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 1.5rem; letter-spacing: 0.5px; }
+</style>
+
+<div class="lp">
+  <div class="lp-hero">
+    <div class="lp-logo">F.B.M — FITNESS BENESSERE MASSAGGI</div>
+    <div class="lp-badge-row">
+      <span class="lp-badge">Corsi Fitness</span>
+      <span class="lp-badge">Meda &amp; dintorni</span>
+      <span class="lp-badge">Dal 2018</span>
+    </div>
+    <h1>Muoviti.<br><em>Con metodo.</em><br><span class="light">Con cura.</span></h1>
+    <p class="lp-hero-sub">Corsi in piccoli gruppi, costruiti intorno a te. Dall'adolescente che vuole iniziare, all'adulto che vuole tornare in forma: ogni percorso parte da chi sei, non da un programma standard.</p>
+    <button class="lp-cta-hero" onclick="sendPrompt('Voglio prenotare una consulenza gratuita con Domenico')">Prenota una consulenza gratuita →</button>
+  </div>
+
+  <div class="lp-section">
+    <div class="lp-label">I percorsi</div>
+    <div class="lp-section-title">Scegli il corso giusto per te</div>
+    <div class="lp-section-sub">Non sai quale fa al caso tuo? Chiamaci — ti indirizziamo noi.</div>
+    <div class="lp-courses">
+
+      <div class="lp-course">
+        <div class="lp-course-stripe stripe-hit"></div>
+        <div class="lp-course-top">
+          <div class="lp-course-tag">Energia &amp; dimagrimento</div>
+          <h3>HIT — High Intensity Training</h3>
+          <p>Allenamento ad alta intensità che combina lavoro cardiovascolare e muscolare. Accelera il metabolismo, aiuta a perdere peso e migliora resistenza e forza. Il corso giusto se vuoi tornare in forma.</p>
+        </div>
+        <div class="lp-course-footer">
+          <span class="lp-pill">Uomini &amp; donne</span>
+          <span class="lp-pill">Da adolescenti in poi</span>
+          <span class="lp-pill">Max 8 persone</span>
+        </div>
+      </div>
+
+      <div class="lp-course">
+        <div class="lp-course-stripe stripe-posturale"></div>
+        <div class="lp-course-top">
+          <div class="lp-course-tag">Postura &amp; correzione</div>
+          <h3>Ginnastica Posturale</h3>
+          <p>Ginnastica correttiva per rimettere a posto il corpo: postura, recupero post-trauma, difetti scoliotici. Si lavora con corpo libero e piccoli attrezzi — nessun macchinario, solo armonia di movimento.</p>
+        </div>
+        <div class="lp-course-footer">
+          <span class="lp-pill">Dai 3 anni in poi</span>
+          <span class="lp-pill">Bambini &amp; adulti</span>
+        </div>
+      </div>
+
+      <div class="lp-course">
+        <div class="lp-course-stripe stripe-tono"></div>
+        <div class="lp-course-top">
+          <div class="lp-course-tag">Forza &amp; tono</div>
+          <h3>Tonificazione</h3>
+          <p>Per aumentare la massa magra e definire la muscolatura. Spesso il passo naturale dopo la ginnastica posturale: più muscolo significa più stabilità. Si usano pesi, manubri, bilancieri ed elastici.</p>
+        </div>
+        <div class="lp-course-footer">
+          <span class="lp-pill">Per tutti</span>
+          <span class="lp-pill">Dai 3 anni in poi</span>
+        </div>
+      </div>
+
+      <div class="lp-course">
+        <div class="lp-course-stripe stripe-dolce"></div>
+        <div class="lp-course-top">
+          <div class="lp-course-tag">Benessere &amp; longevità</div>
+          <h3>Ginnastica Dolce</h3>
+          <p>Pensata per l'età adulta e la terza età. Rimette in moto il corpo, contrasta la sedentarietà e recupera elasticità e resistenza funzionale. Restare attivi, senza stress e senza competizione.</p>
+        </div>
+        <div class="lp-course-footer">
+          <span class="lp-pill">Adulti &amp; anziani</span>
+          <span class="lp-pill">Recupero funzionale</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="lp-divider"></div>
+
+  <div class="lp-process">
+    <div class="lp-label">Come funziona</div>
+    <div class="lp-section-title">Il metodo F.B.M</div>
+    <div class="lp-section-sub">Inizia prima del primo allenamento.</div>
+    <div class="lp-steps">
+      <div class="lp-step">
+        <div class="lp-step-num">01</div>
+        <h4>Consulenza telefonica</h4>
+        <p>Ti ascolto e ti indirizzo verso il corso più adatto alla tua situazione.</p>
+      </div>
+      <div class="lp-step">
+        <div class="lp-step-num">02</div>
+        <h4>Primo incontro</h4>
+        <p>Analizziamo il tuo livello fisico, le abitudini e gli obiettivi concreti.</p>
+      </div>
+      <div class="lp-step">
+        <div class="lp-step-num">03</div>
+        <h4>Classe su misura</h4>
+        <p>Gruppi di max 8 persone — ogni esercizio può essere corretto e personalizzato.</p>
+      </div>
+      <div class="lp-step">
+        <div class="lp-step-num">04</div>
+        <h4>Check costanti</h4>
+        <p>Ad ogni lezione valutiamo quella precedente. I progressi si vedono perché vengono misurati.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lp-why">
+    <div class="lp-label">Perché sceglierci</div>
+    <div class="lp-section-title">Non una palestra. Una relazione.</div>
+    <ul class="lp-bullets">
+      <li>Piccoli gruppi, attenzione reale
+        <span>Max 8 persone per classe — non sei un numero.</span>
+      </li>
+      <li>Dal 2018 al tuo fianco
+        <span>Preparazione atletica, recupero funzionale, benessere a 360°.</span>
+      </li>
+      <li>Corpo libero, nessun macchinario
+        <span>Valorizzare il corpo e farlo lavorare in armonia — è una scelta filosofica.</span>
+      </li>
+      <li>Ascolto attivo, approccio umano
+        <span>Ogni percorso parte dalla tua storia, non da un programma generico.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="lp-cta-section">
+    <h2>Pronto a iniziare?</h2>
+    <p>Una chiamata è sufficiente per capire qual è il corso giusto per te.</p>
+    <div class="lp-cta-group">
+      <button class="lp-cta-primary" onclick="sendPrompt('Voglio informazioni sui corsi e sugli orari di Domenico')">Chiedi informazioni →</button>
+      <button class="lp-cta-secondary" onclick="sendPrompt('Qual è la differenza tra i corsi F.B.M?')">Confronta i corsi</button>
+    </div>
+    <div class="lp-footer-note">f.b.mdomenicotriolo@virgilio.it · Meda, disponibile entro 11km a domicilio</div>
+  </div>
+</div>
+
+</div>
+<script>function sendPrompt(t) { window.location.href = 'index.html'; }</script>
+</body>
+</html>

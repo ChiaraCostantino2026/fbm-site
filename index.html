@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F.B.M — Domenico Triolo</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0e1220;
+    --bg2: #141826;
+    --cyan: #00d4e8;
+    --cyan-dim: rgba(0,212,232,0.15);
+    --violet: #7b5cf0;
+    --violet-dim: rgba(123,92,240,0.15);
+    --white: #ffffff;
+    --white-60: rgba(255,255,255,0.6);
+    --white-30: rgba(255,255,255,0.3);
+    --white-10: rgba(255,255,255,0.08);
+    --border: rgba(255,255,255,0.08);
+    --green: #1D9E75;
+    --orange: #EF9F27;
+    --blue: #378ADD;
+  }
+
+  body {
+    background: var(--bg);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 480px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 1.5rem 3rem;
+    position: relative;
+  }
+
+  /* BG glow effects */
+  .glow-top {
+    position: fixed;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,212,232,0.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .glow-bottom {
+    position: fixed;
+    bottom: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(123,92,240,0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* LOGO */
+  .logo-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2.2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo-box {
+    width: 96px;
+    height: 96px;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  /* SVG logo replica */
+  .logo-box svg { width: 100%; height: 100%; }
+
+  .logo-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 4px;
+    background: linear-gradient(90deg, #00d4e8, #7b5cf0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .logo-tagline {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--white-30);
+    margin-top: 4px;
+  }
+
+  /* BIO */
+  .bio {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .bio h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 0.6rem;
+  }
+  .bio h1 em {
+    font-style: normal;
+    background: linear-gradient(90deg, #00d4e8, #7b5cf0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bio p {
+    font-size: 14px;
+    color: var(--white-60);
+    line-height: 1.75;
+    font-weight: 300;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  /* DIVIDER */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--border);
+  }
+  .divider span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--white-30);
+  }
+
+  /* MAIN LINKS */
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .link-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 1.1rem 1.25rem;
+    border-radius: 16px;
+    border: 0.5px solid var(--border);
+    background: var(--white-10);
+    text-decoration: none;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .link-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.11);
+  }
+
+  .link-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .icon-green { background: rgba(29,158,117,0.2); }
+  .icon-orange { background: rgba(239,159,39,0.2); }
+  .icon-blue { background: rgba(55,138,221,0.2); }
+
+  .link-text { flex: 1; }
+  .link-text h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+  .link-text p {
+    font-size: 12px;
+    color: var(--white-60);
+    font-weight: 300;
+    line-height: 1.4;
+  }
+  .link-arrow {
+    font-size: 16px;
+    color: var(--white-30);
+    flex-shrink: 0;
+  }
+
+  .link-card.green .link-text h3 { color: #5DCAA5; }
+  .link-card.orange .link-text h3 { color: #FAC775; }
+  .link-card.blue .link-text h3 { color: #85B7EB; }
+
+  /* CONTACT */
+  .contact-section {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 2rem;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 0.5px solid var(--border);
+    background: var(--white-10);
+    color: var(--white-60);
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+  .contact-btn:hover {
+    border-color: rgba(255,255,255,0.18);
+    color: var(--white);
+    background: rgba(255,255,255,0.12);
+  }
+  .contact-btn .btn-icon { font-size: 16px; }
+
+  .contact-btn.whatsapp:hover { border-color: rgba(37,211,102,0.4); background: rgba(37,211,102,0.08); color: #25D366; }
+  .contact-btn.email:hover { border-color: rgba(0,212,232,0.3); background: rgba(0,212,232,0.06); color: var(--cyan); }
+  .contact-btn.instagram:hover { border-color: rgba(225,48,108,0.4); background: rgba(225,48,108,0.06); color: #e1306c; }
+  .contact-btn.location:hover { border-color: rgba(255,255,255,0.18); color: var(--white); }
+
+  /* SINCE */
+  .since-bar {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 0.5px solid var(--border);
+    background: var(--white-10);
+    margin-bottom: 2rem;
+  }
+  .since-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .since-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, #00d4e8, #7b5cf0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+  }
+  .since-label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--white-30);
+  }
+  .since-sep {
+    width: 0.5px;
+    height: 28px;
+    background: var(--border);
+  }
+
+  /* FOOTER */
+  .footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  .footer p {
+    font-size: 11px;
+    color: var(--white-30);
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+  }
+</style>
+</head>
+<body>
+
+<div class="glow-top"></div>
+<div class="glow-bottom"></div>
+
+<div class="page">
+
+  <!-- LOGO -->
+  <div class="logo-wrap">
+    <div class="logo-box">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#00d4e8"/>
+            <stop offset="100%" style="stop-color:#7b5cf0"/>
+          </linearGradient>
+        </defs>
+        <!-- Square frame — top and right sides -->
+        <rect x="30" y="30" width="140" height="140" fill="none" stroke="url(#grad1)" stroke-width="5" stroke-dasharray="180 100" stroke-dashoffset="0"/>
+        <!-- Bottom-left corner segments -->
+        <line x1="30" y1="170" x2="30" y2="120" stroke="url(#grad1)" stroke-width="5"/>
+        <line x1="30" y1="170" x2="80" y2="170" stroke="url(#grad1)" stroke-width="5"/>
+        <!-- Letters -->
+        <text x="45" y="85" font-family="'Bebas Neue', sans-serif" font-size="38" fill="#00d4e8">F.</text>
+        <text x="75" y="120" font-family="'Bebas Neue', sans-serif" font-size="38" fill="#5ba8e8">B.</text>
+        <text x="105" y="155" font-family="'Bebas Neue', sans-serif" font-size="38" fill="#7b5cf0">M.</text>
+      </svg>
+    </div>
+    <div class="logo-name">DOMENICO TRIOLO</div>
+    <div class="logo-tagline">Fitness · Beauty · Massage</div>
+  </div>
+
+  <!-- BIO -->
+  <div class="bio">
+    <h1>Preparazione atletica,<br><em>benessere e massaggi</em></h1>
+    <p>Dal 2018 mi occupo di preparazione atletica, recupero funzionale e massaggi. Approccio umano, ascolto attivo, percorsi su misura. A Meda e dintorni.</p>
+  </div>
+
+  <!-- LINKS -->
+  <div class="divider"><span>Scegli il tuo percorso</span></div>
+
+  <div class="links">
+    <a class="link-card green" href="corsi.html">
+      <div class="link-icon icon-green">🏃</div>
+      <div class="link-text">
+        <h3>Corsi Fitness</h3>
+        <p>HIT · Ginnastica Posturale · Tonificazione · Ginnastica Dolce</p>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+    <a class="link-card orange" href="personal-trainer.html">
+      <div class="link-icon icon-orange">🎯</div>
+      <div class="link-text">
+        <h3>Personal Trainer</h3>
+        <p>Percorso su misura · In struttura o a domicilio · Prima consulenza gratuita</p>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+    <a class="link-card blue" href="massaggi.html">
+      <div class="link-icon icon-blue">✋</div>
+      <div class="link-text">
+        <h3>Massaggi</h3>
+        <p>Rilassanti · Muscolari · Estetici · Energetici · Body Sauna</p>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+  </div>
+
+  <!-- STATS -->
+  <div class="since-bar">
+    <div class="since-item">
+      <div class="since-num">2018</div>
+      <div class="since-label">Dal</div>
+    </div>
+    <div class="since-sep"></div>
+    <div class="since-item">
+      <div class="since-num">3</div>
+      <div class="since-label">Aree</div>
+    </div>
+    <div class="since-sep"></div>
+    <div class="since-item">
+      <div class="since-num">11km</div>
+      <div class="since-label">Domicilio</div>
+    </div>
+    <div class="since-sep"></div>
+    <div class="since-item">
+      <div class="since-num">8</div>
+      <div class="since-label">Max gruppo</div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-section">
+    <div class="divider" style="margin-bottom:1rem;"><span>Contatti</span></div>
+    <div class="contact-grid">
+      <a class="contact-btn whatsapp" href="https://wa.me/39XXXXXXXXXX">
+        <span class="btn-icon">💬</span> WhatsApp
+      </a>
+      <a class="contact-btn email" href="mailto:f.b.mdomenicotriolo@virgilio.it">
+        <span class="btn-icon">✉️</span> Email
+      </a>
+      <a class="contact-btn instagram" href="https://instagram.com/">
+        <span class="btn-icon">📷</span> Instagram
+      </a>
+      <div class="contact-btn location">
+        <span class="btn-icon">📍</span> Meda (MB)
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>F.B.M — Fitness Beauty Massage<br>f.b.mdomenicotriolo@virgilio.it · Meda, MB</p>
+  </div>
+
+</div>
+</body>
+</html>
