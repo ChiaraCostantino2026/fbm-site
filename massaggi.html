@@ -59,7 +59,8 @@ body { background: #f4f4f8; min-height: 100vh; }
   .lp-cat-label { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 1px; color: var(--color-text-primary); }
   .lp-cat-desc { font-size: 13px; color: var(--color-text-secondary); margin: 0 0 1.2rem 22px; font-weight: 300; line-height: 1.6; }
 
-  .lp-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 2.5rem; }
+  .lp-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 2.5rem; }
+  @media (max-width: 600px) { .lp-cards { grid-template-columns: 1fr; } }
   .lp-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; }
   .lp-card:hover { border-color: #B5D4F4; }
   .lp-card-stripe { height: 3px; }
