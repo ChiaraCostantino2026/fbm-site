@@ -46,284 +46,155 @@
     position: relative;
   }
 
-  /* BG glow effects */
   .glow-top {
-    position: fixed;
-    top: -120px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
+    position: fixed; top: -120px; left: 50%; transform: translateX(-50%);
+    width: 500px; height: 500px; border-radius: 50%;
     background: radial-gradient(circle, rgba(0,212,232,0.12) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
+    pointer-events: none; z-index: 0;
   }
   .glow-bottom {
-    position: fixed;
-    bottom: -150px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
+    position: fixed; bottom: -150px; left: 50%; transform: translateX(-50%);
+    width: 500px; height: 500px; border-radius: 50%;
     background: radial-gradient(circle, rgba(123,92,240,0.1) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
+    pointer-events: none; z-index: 0;
   }
 
-  /* LOGO */
   .logo-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2.2rem;
-    position: relative;
-    z-index: 1;
+    display: flex; flex-direction: column; align-items: center;
+    margin-bottom: 2.2rem; position: relative; z-index: 1;
   }
-
-  .logo-box {
-    width: 96px;
-    height: 96px;
-    position: relative;
-    margin-bottom: 1rem;
-  }
-
-  /* SVG logo replica */
+  .logo-box { width: 96px; height: 96px; position: relative; margin-bottom: 1rem; }
   .logo-box svg { width: 100%; height: 100%; }
-
   .logo-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem;
-    letter-spacing: 4px;
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 4px;
     background: linear-gradient(90deg, #00d4e8, #7b5cf0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
-
   .logo-tagline {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--white-30);
-    margin-top: 4px;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--white-30); margin-top: 4px;
   }
 
-  /* BIO */
-  .bio {
-    text-align: center;
-    margin-bottom: 2.5rem;
-    position: relative;
-    z-index: 1;
-  }
-  .bio h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.4rem;
-    line-height: 1;
-    color: var(--white);
-    margin-bottom: 0.6rem;
-  }
+  .bio { text-align: center; margin-bottom: 2.5rem; position: relative; z-index: 1; }
+  .bio h1 { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; line-height: 1; color: var(--white); margin-bottom: 0.6rem; }
   .bio h1 em {
     font-style: normal;
     background: linear-gradient(90deg, #00d4e8, #7b5cf0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
-  .bio p {
-    font-size: 14px;
-    color: var(--white-60);
-    line-height: 1.75;
-    font-weight: 300;
-    max-width: 340px;
-    margin: 0 auto;
-  }
+  .bio p { font-size: 14px; color: var(--white-60); line-height: 1.75; font-weight: 300; max-width: 340px; margin: 0 auto; }
 
-  /* DIVIDER */
   .divider {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 1.5rem;
-    position: relative;
-    z-index: 1;
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 1.5rem; position: relative; z-index: 1;
   }
-  .divider::before, .divider::after {
-    content: '';
-    flex: 1;
-    height: 0.5px;
-    background: var(--border);
-  }
-  .divider span {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--white-30);
-  }
+  .divider::before, .divider::after { content: ''; flex: 1; height: 0.5px; background: var(--border); }
+  .divider span { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--white-30); }
 
-  /* MAIN LINKS */
-  .links {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 1;
-  }
+  .links { display: flex; flex-direction: column; gap: 12px; margin-bottom: 2rem; position: relative; z-index: 1; }
 
   .link-card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 1.1rem 1.25rem;
-    border-radius: 16px;
-    border: 0.5px solid var(--border);
-    background: var(--white-10);
-    text-decoration: none;
-    color: var(--white);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    display: flex; align-items: center; gap: 16px; padding: 1.1rem 1.25rem;
+    border-radius: 16px; border: 0.5px solid var(--border); background: var(--white-10);
+    text-decoration: none; color: var(--white); cursor: pointer;
+    transition: all 0.2s ease; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
   }
-  .link-card:hover {
-    transform: translateY(-2px);
-    border-color: rgba(255,255,255,0.18);
-    background: rgba(255,255,255,0.11);
-  }
-
-  .link-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    flex-shrink: 0;
-  }
+  .link-card:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.11); }
+  .link-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
   .icon-green { background: rgba(29,158,117,0.2); }
   .icon-orange { background: rgba(239,159,39,0.2); }
   .icon-blue { background: rgba(55,138,221,0.2); }
-
   .link-text { flex: 1; }
-  .link-text h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.25rem;
-    letter-spacing: 0.5px;
-    margin-bottom: 2px;
-  }
-  .link-text p {
-    font-size: 12px;
-    color: var(--white-60);
-    font-weight: 300;
-    line-height: 1.4;
-  }
-  .link-arrow {
-    font-size: 16px;
-    color: var(--white-30);
-    flex-shrink: 0;
-  }
-
+  .link-text h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem; letter-spacing: 0.5px; margin-bottom: 2px; }
+  .link-text p { font-size: 12px; color: var(--white-60); font-weight: 300; line-height: 1.4; }
+  .link-arrow { font-size: 16px; color: var(--white-30); flex-shrink: 0; }
   .link-card.green .link-text h3 { color: #5DCAA5; }
   .link-card.orange .link-text h3 { color: #FAC775; }
   .link-card.blue .link-text h3 { color: #85B7EB; }
 
   /* CONTACT */
-  .contact-section {
-    position: relative;
-    z-index: 1;
-    margin-bottom: 2rem;
-  }
+  .contact-section { position: relative; z-index: 1; margin-bottom: 2rem; }
 
-  .contact-grid {
+  /* Riga 1: WhatsApp + Email — due pulsanti grandi */
+  .contact-top {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+    margin-bottom: 14px;
   }
 
-  .contact-btn {
+  .contact-btn-big {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 12px 16px;
-    border-radius: 12px;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: 14px;
     border: 0.5px solid var(--border);
     background: var(--white-10);
     color: var(--white-60);
-    font-size: 13px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
     text-decoration: none;
   }
-  .contact-btn:hover {
-    border-color: rgba(255,255,255,0.18);
-    color: var(--white);
-    background: rgba(255,255,255,0.12);
+  .contact-btn-big svg { width: 20px; height: 20px; flex-shrink: 0; }
+  .contact-btn-big:hover { border-color: rgba(255,255,255,0.18); color: var(--white); background: rgba(255,255,255,0.12); }
+  .contact-btn-big.whatsapp { color: #25D366; border-color: rgba(37,211,102,0.3); }
+  .contact-btn-big.whatsapp:hover { border-color: rgba(37,211,102,0.5); background: rgba(37,211,102,0.1); color: #25D366; }
+  .contact-btn-big.email:hover { border-color: rgba(0,212,232,0.4); background: rgba(0,212,232,0.08); color: var(--cyan); }
+
+  /* Riga 2: Tre social — solo icone */
+  .contact-socials {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
   }
-  .contact-btn .btn-icon { font-size: 16px; }
 
-  .contact-btn.whatsapp:hover { border-color: rgba(37,211,102,0.4); background: rgba(37,211,102,0.08); color: #25D366; }
-  .contact-btn.email:hover { border-color: rgba(0,212,232,0.3); background: rgba(0,212,232,0.06); color: var(--cyan); }
-  .contact-btn.instagram:hover { border-color: rgba(225,48,108,0.4); background: rgba(225,48,108,0.06); color: #e1306c; }
-  .contact-btn.location:hover { border-color: rgba(255,255,255,0.18); color: var(--white); }
-
-  /* SINCE */
-  .since-bar {
-    position: relative;
-    z-index: 1;
+  .social-icon-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    padding: 1rem;
-    border-radius: 12px;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
     border: 0.5px solid var(--border);
     background: var(--white-10);
-    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: var(--white-60);
   }
-  .since-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
+  .social-icon-btn svg { width: 24px; height: 24px; }
+  .social-icon-btn:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.12); }
+  .social-icon-btn.instagram { color: #e1306c; }
+  .social-icon-btn.instagram:hover { border-color: rgba(225,48,108,0.5); background: rgba(225,48,108,0.08); }
+  .social-icon-btn.facebook { color: #1877F2; }
+  .social-icon-btn.facebook:hover { border-color: rgba(24,119,242,0.5); background: rgba(24,119,242,0.08); }
+  .social-icon-btn.tiktok { color: var(--white); }
+  .social-icon-btn.tiktok:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); }
+
+  /* STATS BAR */
+  .since-bar {
+    position: relative; z-index: 1;
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+    padding: 1rem; border-radius: 12px; border: 0.5px solid var(--border);
+    background: var(--white-10); margin-bottom: 2rem;
   }
+  .since-item { display: flex; flex-direction: column; align-items: center; gap: 2px; }
   .since-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem;
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem;
     background: linear-gradient(90deg, #00d4e8, #7b5cf0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1;
   }
-  .since-label {
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--white-30);
-  }
-  .since-sep {
-    width: 0.5px;
-    height: 28px;
-    background: var(--border);
-  }
+  .since-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--white-30); }
+  .since-sep { width: 0.5px; height: 28px; background: var(--border); }
 
   /* FOOTER */
-  .footer {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-  }
-  .footer p {
-    font-size: 11px;
-    color: var(--white-30);
-    letter-spacing: 0.5px;
-    line-height: 1.8;
-  }
+  .footer { position: relative; z-index: 1; text-align: center; }
+  .footer p { font-size: 11px; color: var(--white-30); letter-spacing: 0.5px; line-height: 1.8; }
+  .footer .address { font-size: 13px; color: var(--white); font-weight: 500; margin-top: 8px; letter-spacing: 0.3px; }
 </style>
 </head>
 <body>
@@ -343,12 +214,9 @@
             <stop offset="100%" style="stop-color:#7b5cf0"/>
           </linearGradient>
         </defs>
-        <!-- Square frame — top and right sides -->
         <rect x="30" y="30" width="140" height="140" fill="none" stroke="url(#grad1)" stroke-width="5" stroke-dasharray="180 100" stroke-dashoffset="0"/>
-        <!-- Bottom-left corner segments -->
         <line x1="30" y1="170" x2="30" y2="120" stroke="url(#grad1)" stroke-width="5"/>
         <line x1="30" y1="170" x2="80" y2="170" stroke="url(#grad1)" stroke-width="5"/>
-        <!-- Letters -->
         <text x="45" y="85" font-family="'Bebas Neue', sans-serif" font-size="38" fill="#00d4e8">F.</text>
         <text x="75" y="120" font-family="'Bebas Neue', sans-serif" font-size="38" fill="#5ba8e8">B.</text>
         <text x="105" y="155" font-family="'Bebas Neue', sans-serif" font-size="38" fill="#7b5cf0">M.</text>
@@ -361,7 +229,7 @@
   <!-- BIO -->
   <div class="bio">
     <h1>Preparazione atletica,<br><em>benessere e massaggi</em></h1>
-    <p>Dal 2018 mi occupo di preparazione atletica, recupero funzionale e massaggi. Approccio umano, ascolto attivo, percorsi su misura. A Meda e dintorni.</p>
+    <p>Dal 2018 mi occupo di preparazione atletica, recupero funzionale e massaggi. Approccio umano, ascolto attivo, percorsi su misura a Meda e dintorni.</p>
   </div>
 
   <!-- LINKS -->
@@ -376,7 +244,6 @@
       </div>
       <div class="link-arrow">→</div>
     </a>
-
     <a class="link-card orange" href="personal-trainer.html">
       <div class="link-icon icon-orange">🎯</div>
       <div class="link-text">
@@ -385,7 +252,6 @@
       </div>
       <div class="link-arrow">→</div>
     </a>
-
     <a class="link-card blue" href="massaggi.html">
       <div class="link-icon icon-blue">✋</div>
       <div class="link-text">
@@ -398,49 +264,77 @@
 
   <!-- STATS -->
   <div class="since-bar">
-    <div class="since-item">
-      <div class="since-num">2018</div>
-      <div class="since-label">Dal</div>
-    </div>
+    <div class="since-item"><div class="since-num">2018</div><div class="since-label">Dal</div></div>
     <div class="since-sep"></div>
-    <div class="since-item">
-      <div class="since-num">3</div>
-      <div class="since-label">Aree</div>
-    </div>
+    <div class="since-item"><div class="since-num">3</div><div class="since-label">Aree</div></div>
     <div class="since-sep"></div>
-    <div class="since-item">
-      <div class="since-num">11km</div>
-      <div class="since-label">Domicilio</div>
-    </div>
+    <div class="since-item"><div class="since-num">11km</div><div class="since-label">Domicilio</div></div>
     <div class="since-sep"></div>
-    <div class="since-item">
-      <div class="since-num">8</div>
-      <div class="since-label">Max gruppo</div>
-    </div>
+    <div class="since-item"><div class="since-num">8</div><div class="since-label">Max gruppo</div></div>
   </div>
 
   <!-- CONTACT -->
   <div class="contact-section">
     <div class="divider" style="margin-bottom:1rem;"><span>Contatti</span></div>
-    <div class="contact-grid">
-      <a class="contact-btn whatsapp" href="https://wa.me/39XXXXXXXXXX">
-        <span class="btn-icon">💬</span> WhatsApp
+
+    <!-- Riga 1: WhatsApp + Email -->
+    <div class="contact-top">
+      <a class="contact-btn-big whatsapp" href="https://wa.me/393393638924">
+        <!-- WhatsApp SVG ufficiale -->
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        WhatsApp
       </a>
-      <a class="contact-btn email" href="mailto:f.b.mdomenicotriolo@virgilio.it">
-        <span class="btn-icon">✉️</span> Email
+      <a class="contact-btn-big email" href="mailto:f.b.mdomenicotriolo@virgilio.it">
+        <!-- Email SVG -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="M2 7l10 7 10-7"/>
+        </svg>
+        Email
       </a>
-      <a class="contact-btn instagram" href="https://instagram.com/">
-        <span class="btn-icon">📷</span> Instagram
+    </div>
+
+    <!-- Riga 2: Social icon buttons -->
+    <div class="contact-socials">
+
+      <!-- Instagram -->
+      <a class="social-icon-btn instagram" href="https://www.instagram.com/f.b.m_di_domenico_triolo?igsh=NXd6MXdveTMxamI0" target="_blank" rel="noopener" title="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="ig-grad" cx="30%" cy="107%" r="150%">
+              <stop offset="0%" stop-color="#fdf497"/>
+              <stop offset="20%" stop-color="#fd5949"/>
+              <stop offset="60%" stop-color="#d6249f"/>
+              <stop offset="100%" stop-color="#285AEB"/>
+            </radialGradient>
+          </defs>
+          <path fill="url(#ig-grad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
       </a>
-      <div class="contact-btn location">
-        <span class="btn-icon">📍</span> Meda (MB)
-      </div>
+
+      <!-- Facebook -->
+      <a class="social-icon-btn facebook" href="https://www.facebook.com/share/18TuT9Vz7o/" target="_blank" rel="noopener" title="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+      </a>
+
+      <!-- TikTok -->
+      <a class="social-icon-btn tiktok" href="https://www.tiktok.com/@f.b.m.didomenicotriolo?_r=1&_t=ZN-95rVfDsE1X4" target="_blank" rel="noopener" title="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/>
+        </svg>
+      </a>
+
     </div>
   </div>
 
   <!-- FOOTER -->
   <div class="footer">
-    <p>F.B.M — Fitness Beauty Massage<br>f.b.mdomenicotriolo@virgilio.it · Meda, MB</p>
+    <p>F.B.M — Fitness Beauty Massage</p>
+    <p class="address">📍 Via Pace 34, Meda (MB)</p>
   </div>
 
 </div>
