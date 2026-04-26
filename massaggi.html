@@ -40,7 +40,7 @@ body { background: #f4f4f8; min-height: 100vh; }
   .lp-hero h1 em { color: #85B7EB; font-style: normal; }
   .lp-hero h1 .light { color: rgba(255,255,255,0.3); }
   .lp-hero-sub { font-size: 15px; color: rgba(255,255,255,0.6); max-width: 440px; margin: 0 0 2rem; line-height: 1.75; font-weight: 300; }
-  .lp-cta-hero { display: inline-flex; align-items: center; gap: 8px; background: #378ADD; color: #fff; font-weight: 500; font-size: 14px; padding: 13px 28px; border-radius: 40px; border: none; cursor: pointer; }
+  .lp-cta-hero { display: inline-flex; align-items: center; gap: 8px; background: #378ADD; color: #fff; font-weight: 500; font-size: 14px; padding: 13px 28px; border-radius: 40px; border: none; cursor: pointer; text-decoration: none; }
   .lp-cta-hero:hover { background: #185FA5; }
   .lp-badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
   .lp-badge { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; border: 0.5px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.5); }
@@ -83,7 +83,8 @@ body { background: #f4f4f8; min-height: 100vh; }
   .lp-sauna-note strong { font-weight: 500; color: #042C53; display: block; margin-bottom: 3px; }
 
   .lp-process { padding: 2.5rem 2rem; background: #f0f6fd; border-radius: var(--border-radius-lg); margin: 2px 0; }
-  .lp-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 1.5rem; }
+  .lp-steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .lp-steps { grid-template-columns: 1fr; } }
   .lp-step { background: #fff; border: 0.5px solid #B5D4F4; border-radius: var(--border-radius-lg); padding: 1.1rem 1rem; }
   .lp-step-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: #378ADD; line-height: 1; margin-bottom: 8px; }
   .lp-step h4 { font-size: 13px; font-weight: 500; margin: 0 0 4px; color: #042C53; }
@@ -98,9 +99,9 @@ body { background: #f4f4f8; min-height: 100vh; }
   .lp-cta-section h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2.3rem; color: #fff; margin: 0 0 0.5rem; }
   .lp-cta-section p { font-size: 14px; color: rgba(255,255,255,0.5); margin: 0 0 1.8rem; font-weight: 300; }
   .lp-cta-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  .lp-cta-primary { background: #378ADD; color: #fff; font-size: 14px; font-weight: 500; padding: 13px 32px; border-radius: 40px; border: none; cursor: pointer; }
+  .lp-cta-primary { background: #378ADD; color: #fff; font-size: 14px; font-weight: 500; padding: 13px 32px; border-radius: 40px; border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
   .lp-cta-primary:hover { background: #185FA5; }
-  .lp-cta-secondary { background: transparent; color: rgba(255,255,255,0.65); font-size: 14px; padding: 13px 32px; border-radius: 40px; border: 0.5px solid rgba(255,255,255,0.2); cursor: pointer; }
+  .lp-cta-secondary { background: transparent; color: rgba(255,255,255,0.65); font-size: 14px; padding: 13px 32px; border-radius: 40px; border: 0.5px solid rgba(255,255,255,0.2); cursor: pointer; text-decoration: none; }
   .lp-footer-note { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 1.5rem; letter-spacing: 0.5px; }
 </style>
 
@@ -114,141 +115,52 @@ body { background: #f4f4f8; min-height: 100vh; }
       <span class="lp-badge">Dal 2018</span>
     </div>
     <h1>Rilassati.<br><em>Recupera.</em><br><span class="light">Riequilibrati.</span></h1>
-    <p class="lp-hero-sub">Non sai quale massaggio fa per te? Nessun problema — ti ascolto e ti indirizzo io. Ogni trattamento parte da come stai, non da un listino standard.</p>
-    <button class="lp-cta-hero" onclick="sendPrompt('Voglio prenotare un massaggio con Domenico')">Prenota una sessione →</button>
+    <p class="lp-hero-sub">Non sai quale massaggio fa per te? Nessun problema, ti ascolto e ti indirizzo io. Ogni trattamento parte da come stai, non da un listino standard.</p>
+    <p style="color:rgba(255,255,255,0.5); font-size:13px; margin-bottom:1rem; font-weight:300;">Contattami — troveremo insieme il trattamento giusto per te.</p>
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <a class="lp-cta-hero" href="https://wa.me/393393638924" style="background:#378ADD;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Scrivimi su WhatsApp
+      </a>
+      <a class="lp-cta-hero" href="tel:+393393638924" style="background:transparent; border:1px solid rgba(255,255,255,0.25); color:rgba(255,255,255,0.8);">📞 Chiama</a>
+    </div>
   </div>
 
   <div class="lp-section">
     <div class="lp-label">I trattamenti</div>
-    <div class="lp-section-title">Quattro aree, un solo obiettivo</div>
-    <div class="lp-section-sub">Scegli la categoria che più ti rappresenta — o lasciati guidare.</div>
+    <div class="lp-section-title">Un massaggio per ogni esigenza</div>
+    <div class="lp-section-sub">Dall'antistress al riequilibrio energetico: ogni esigenza ha il suo massaggio.</div>
 
-    <div class="lp-cat-intro">
-      <div class="lp-cat-dot dot-r"></div>
-      <div class="lp-cat-label">Rilassanti</div>
-    </div>
+    <div class="lp-cat-intro"><div class="lp-cat-dot dot-r"></div><div class="lp-cat-label">Rilassanti</div></div>
     <div class="lp-cat-desc">Per staccare dalla vita quotidiana, dormire meglio e allentare la tensione — nel corpo e nella mente.</div>
     <div class="lp-cards">
-      <div class="lp-card">
-        <div class="lp-card-stripe stripe-r"></div>
-        <div class="lp-card-body">
-          <h4>Massaggio Antistress</h4>
-          <p>Rilassa corpo ed energia in profondità. Favorisce un sonno più profondo e aiuta a ritrovare equilibrio dopo periodi di tensione. Va bene per tutti.</p>
-          <span class="lp-card-tag">Per tutti</span>
-        </div>
-      </div>
-      <div class="lp-card">
-        <div class="lp-card-stripe stripe-r"></div>
-        <div class="lp-card-body">
-          <h4>Stone Massage</h4>
-          <p>Massaggio con pietre calde. Scioglie le tensioni muscolari in modo profondo e delicato — ideale dopo periodi di forte stress fisico o emotivo.</p>
-          <span class="lp-card-tag">Rilassante profondo</span>
-        </div>
-      </div>
-      <div class="lp-card">
-        <div class="lp-card-stripe stripe-r"></div>
-        <div class="lp-card-body">
-          <h4>Massaggio Svedese</h4>
-          <p>Il massaggio ideale per chi non ha mai provato. Alleggerisce tutta la muscolatura e mette a proprio agio anche chi si approccia per la prima volta.</p>
-          <span class="lp-card-tag">Prima esperienza</span>
-        </div>
-      </div>
+      <div class="lp-card"><div class="lp-card-stripe stripe-r"></div><div class="lp-card-body"><h4>Massaggio Antistress</h4><p>Rilassa corpo ed energia in profondità. Favorisce un sonno più profondo e aiuta a ritrovare equilibrio dopo periodi di tensione. Va bene per tutti.</p><span class="lp-card-tag">Per tutti</span></div></div>
+      <div class="lp-card"><div class="lp-card-stripe stripe-r"></div><div class="lp-card-body"><h4>Stone Massage</h4><p>Massaggio con pietre calde. Scioglie le tensioni muscolari in modo profondo e delicato — ideale dopo periodi di forte stress fisico o emotivo.</p><span class="lp-card-tag">Rilassante profondo</span></div></div>
+      <div class="lp-card"><div class="lp-card-stripe stripe-r"></div><div class="lp-card-body"><h4>Massaggio Svedese</h4><p>Il massaggio ideale per chi non ha mai provato. Alleggerisce tutta la muscolatura e mette a proprio agio anche chi si approccia per la prima volta.</p><span class="lp-card-tag">Prima esperienza</span></div></div>
     </div>
 
-    <div class="lp-cat-intro">
-      <div class="lp-cat-dot dot-m"></div>
-      <div class="lp-cat-label">Muscolari</div>
-    </div>
+    <div class="lp-cat-intro"><div class="lp-cat-dot dot-m"></div><div class="lp-cat-label">Muscolari</div></div>
     <div class="lp-cat-desc">Per recuperare dopo allenamenti intensi, sciogliere contratture e prevenire infortuni. Adatti a sportivi e non.</div>
     <div class="lp-cards">
-      <div class="lp-card">
-        <div class="lp-card-stripe stripe-m"></div>
-        <div class="lp-card-body">
-          <h4>Decontratturante / Sportivo</h4>
-          <p>Scioglie le contratture, sblocca le articolazioni e previene gli infortuni. Molto utile agli sportivi — agonistici e non — e a chi accumula tensioni muscolari da lavoro o stress.</p>
-          <span class="lp-card-tag">Sportivi &amp; non</span>
-        </div>
-      </div>
+      <div class="lp-card"><div class="lp-card-stripe stripe-m"></div><div class="lp-card-body"><h4>Decontratturante / Sportivo</h4><p>Scioglie le contratture, sblocca le articolazioni e previene gli infortuni. Molto utile agli sportivi — agonistici e non — e a chi accumula tensioni muscolari da lavoro o stress.</p><span class="lp-card-tag">Sportivi &amp; non</span></div></div>
     </div>
 
-    <div class="lp-cat-intro">
-      <div class="lp-cat-dot dot-e"></div>
-      <div class="lp-cat-label">Estetici</div>
-    </div>
+    <div class="lp-cat-intro"><div class="lp-cat-dot dot-e"></div><div class="lp-cat-label">Estetici</div></div>
     <div class="lp-cat-desc">Per migliorare l'aspetto fisico e la consapevolezza di sé. Trattamenti mirati su viso, gambe e addome.</div>
     <div class="lp-cards">
-      <div class="lp-card">
-        <div class="lp-card-stripe stripe-e"></div>
-        <div class="lp-card-body">
-          <h4>Massaggio Drenante</h4>
-          <p>Ideale per chi sente le gambe pesanti o ha ritenzione idrica. Defluisce i liquidi in eccesso e tonifica la muscolatura. Rivolto anche agli uomini.</p>
-          <span class="lp-card-tag">Gambe pesanti</span>
-        </div>
-      </div>
-      <div class="lp-card">
-        <div class="lp-card-stripe stripe-e"></div>
-        <div class="lp-card-body">
-          <h4>Anticellulite</h4>
-          <p>Agisce in profondità su gambe e glutei. Utilizza la coppettazione per rompere e drenare la cellulite in modo efficace e mirato.</p>
-          <span class="lp-card-tag">Gambe &amp; glutei</span>
-        </div>
-      </div>
-      <div class="lp-card">
-        <div class="lp-card-stripe stripe-e"></div>
-        <div class="lp-card-body">
-          <h4>Pancia Piatta</h4>
-          <p>Drena i liquidi in eccesso accumulati nell'addome e tonifica la zona addominale. Ottimo abbinato a un percorso fitness.</p>
-          <span class="lp-card-tag">Addome</span>
-        </div>
-      </div>
-      <div class="lp-card">
-        <div class="lp-card-stripe stripe-e"></div>
-        <div class="lp-card-body">
-          <h4>Gua Sha Viso</h4>
-          <p>Massaggio drenante, tonificante e rilassante per il viso. Combina passaggi manuali e pietre per un effetto luminoso e distensivo.</p>
-          <span class="lp-card-tag">Viso</span>
-        </div>
-      </div>
+      <div class="lp-card"><div class="lp-card-stripe stripe-e"></div><div class="lp-card-body"><h4>Massaggio Drenante</h4><p>Ideale per chi sente le gambe pesanti o ha ritenzione idrica. Defluisce i liquidi in eccesso e tonifica la muscolatura. Rivolto anche agli uomini.</p><span class="lp-card-tag">Gambe pesanti</span></div></div>
+      <div class="lp-card"><div class="lp-card-stripe stripe-e"></div><div class="lp-card-body"><h4>Anticellulite</h4><p>Agisce in profondità su gambe e glutei. Utilizza la coppettazione per rompere e drenare la cellulite in modo efficace e mirato.</p><span class="lp-card-tag">Gambe &amp; glutei</span></div></div>
+      <div class="lp-card"><div class="lp-card-stripe stripe-e"></div><div class="lp-card-body"><h4>Pancia Piatta</h4><p>Drena i liquidi in eccesso accumulati nell'addome e tonifica la zona addominale. Ottimo abbinato a un percorso fitness.</p><span class="lp-card-tag">Addome</span></div></div>
+      <div class="lp-card"><div class="lp-card-stripe stripe-e"></div><div class="lp-card-body"><h4>Gua Sha Viso</h4><p>Massaggio drenante, tonificante e rilassante per il viso. Combina passaggi manuali e pietre per un effetto luminoso e distensivo.</p><span class="lp-card-tag">Viso</span></div></div>
     </div>
 
-    <div class="lp-cat-intro">
-      <div class="lp-cat-dot dot-en"></div>
-      <div class="lp-cat-label">Energetici</div>
-    </div>
+    <div class="lp-cat-intro"><div class="lp-cat-dot dot-en"></div><div class="lp-cat-label">Energetici</div></div>
     <div class="lp-cat-desc">Per riequilibrare il campo energetico del corpo, dovuto a stress, tensioni accumulate o eventi della storia personale.</div>
     <div class="lp-cards">
-      <div class="lp-card">
-        <div class="lp-card-stripe stripe-en"></div>
-        <div class="lp-card-body">
-          <h4>Soul Contact</h4>
-          <p>Ottimo per chi vuole liberare la mente e allentare i pensieri. Agisce sul piano energetico e mentale con grande delicatezza.</p>
-          <span class="lp-card-tag">Mente &amp; energia</span>
-        </div>
-      </div>
-      <div class="lp-card">
-        <div class="lp-card-stripe stripe-en"></div>
-        <div class="lp-card-body">
-          <h4>Rituale Hawaiano</h4>
-          <p>Tecnica antica e armoniosa che lavora su tutto il corpo in modo fluido, come una danza. Coinvolge contemporaneamente parte inferiore e superiore — un'esperienza unica.</p>
-          <span class="lp-card-tag">Corpo intero</span>
-        </div>
-      </div>
-      <div class="lp-card">
-        <div class="lp-card-stripe stripe-en"></div>
-        <div class="lp-card-body">
-          <h4>Riequilibrante Chakra</h4>
-          <p>Riequilibra le energie del corpo partendo da problematiche profonde o recenti. Ideale per chi sente uno squilibrio interiore difficile da spiegare.</p>
-          <span class="lp-card-tag">Equilibrio interiore</span>
-        </div>
-      </div>
-      <div class="lp-card">
-        <div class="lp-card-stripe stripe-en"></div>
-        <div class="lp-card-body">
-          <h4>Californiano</h4>
-          <p>Uno dei primi massaggi riabilitativi della storia. Sblocca spalle e ginocchia e restituisce leggerezza fisica ed emotiva — per corpo e spirito insieme.</p>
-          <span class="lp-card-tag">Corpo &amp; spirito</span>
-        </div>
-      </div>
+      <div class="lp-card"><div class="lp-card-stripe stripe-en"></div><div class="lp-card-body"><h4>Soul Contact</h4><p>Ottimo per chi vuole liberare la mente e allentare i pensieri. Agisce sul piano energetico e mentale con grande delicatezza.</p><span class="lp-card-tag">Mente &amp; energia</span></div></div>
+      <div class="lp-card"><div class="lp-card-stripe stripe-en"></div><div class="lp-card-body"><h4>Rituale Hawaiano</h4><p>Tecnica antica e armoniosa che lavora su tutto il corpo in modo fluido, come una danza. Coinvolge contemporaneamente parte inferiore e superiore — un'esperienza unica.</p><span class="lp-card-tag">Corpo intero</span></div></div>
+      <div class="lp-card"><div class="lp-card-stripe stripe-en"></div><div class="lp-card-body"><h4>Riequilibrante Chakra</h4><p>Riequilibra le energie del corpo partendo da problematiche profonde o recenti. Ideale per chi sente uno squilibrio interiore difficile da spiegare.</p><span class="lp-card-tag">Equilibrio interiore</span></div></div>
+      <div class="lp-card"><div class="lp-card-stripe stripe-en"></div><div class="lp-card-body"><h4>Californiano</h4><p>Uno dei primi massaggi riabilitativi della storia. Sblocca spalle e ginocchia e restituisce leggerezza fisica ed emotiva — per corpo e spirito insieme.</p><span class="lp-card-tag">Corpo &amp; spirito</span></div></div>
     </div>
   </div>
 
@@ -269,45 +181,21 @@ body { background: #f4f4f8; min-height: 100vh; }
     <div class="lp-section-title">Il metodo F.B.M</div>
     <div class="lp-section-sub">Ogni trattamento inizia con un ascolto.</div>
     <div class="lp-steps">
-      <div class="lp-step">
-        <div class="lp-step-num">01</div>
-        <h4>Mi racconti come stai</h4>
-        <p>Prima di iniziare ascolto il tuo corpo, le tue tensioni e la tua storia.</p>
-      </div>
-      <div class="lp-step">
-        <div class="lp-step-num">02</div>
-        <h4>Scegliamo insieme</h4>
-        <p>Ti indirizzo verso il massaggio più adatto — non quello più costoso.</p>
-      </div>
-      <div class="lp-step">
-        <div class="lp-step-num">03</div>
-        <h4>Ambiente riservato</h4>
-        <p>Solo io e te. Nessuna confusione, nessun imbarazzo. Uno spazio di cura.</p>
-      </div>
-      <div class="lp-step">
-        <div class="lp-step-num">04</div>
-        <h4>Percorso su misura</h4>
-        <p>Se serve un ciclo di trattamenti, lo costruiamo insieme con obiettivi chiari.</p>
-      </div>
+      <div class="lp-step"><div class="lp-step-num">01</div><h4>Mi racconti come stai</h4><p>Prima di iniziare ascolto il tuo corpo, le tue tensioni e la tua storia.</p></div>
+      <div class="lp-step"><div class="lp-step-num">02</div><h4>Scegliamo insieme</h4><p>Ti indirizzo verso il massaggio più adatto — non quello più costoso.</p></div>
+      <div class="lp-step"><div class="lp-step-num">03</div><h4>Ambiente riservato</h4><p>Solo io e te. Nessuna confusione, nessun imbarazzo. Uno spazio di cura.</p></div>
+      <div class="lp-step"><div class="lp-step-num">04</div><h4>Percorso su misura</h4><p>Se serve un ciclo di trattamenti, lo costruiamo insieme con obiettivi chiari.</p></div>
     </div>
   </div>
 
   <div class="lp-why">
     <div class="lp-label">Perché scegliere F.B.M</div>
-    <div class="lp-section-title">Non un centro estetico. Una cura vera.</div>
+    <div class="lp-section-title">Il tuo benessere, al centro di tutto.</div>
     <ul class="lp-bullets">
-      <li>Ascolto prima di tutto
-        <span>Ogni sessione parte da chi sei e da come stai — non da un menu fisso.</span>
-      </li>
-      <li>Fitness e massaggi insieme
-        <span>Puoi integrare il percorso sportivo con quello di recupero e benessere.</span>
-      </li>
-      <li>Ambiente privato e riservato
-        <span>Solo tu e Domenico — nessuna sala affollata, nessun disagio.</span>
-      </li>
-      <li>Dal 2018 con passione
-        <span>Qualifica di maestro di massaggio e anni di esperienza sul campo.</span>
-      </li>
+      <li>Ascolto prima di tutto<span>Ogni sessione parte da chi sei e da come stai — non da un menu fisso.</span></li>
+      <li>Fitness e massaggi insieme<span>Puoi integrare il percorso sportivo con quello di recupero e benessere.</span></li>
+      <li>Ambiente privato e riservato<span>Solo tu e Domenico — nessuna sala affollata, nessun disagio.</span></li>
+      <li>Dal 2018 con passione<span>Qualifica di maestro di massaggio e anni di esperienza sul campo.</span></li>
     </ul>
   </div>
 
@@ -315,15 +203,16 @@ body { background: #f4f4f8; min-height: 100vh; }
     <h2>Hai bisogno di staccare?</h2>
     <p>Una chiamata è sufficiente per capire qual è il trattamento giusto per te.</p>
     <div class="lp-cta-group">
-      <button class="lp-cta-primary" onclick="sendPrompt('Voglio informazioni sui massaggi di Domenico')">Chiedi informazioni →</button>
-      <button class="lp-cta-secondary" onclick="sendPrompt('Qual è il massaggio giusto per me?')">Aiutami a scegliere</button>
+      <a class="lp-cta-primary" href="https://wa.me/393393638924">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Scrivimi su WhatsApp
+      </a>
+      <a class="lp-cta-secondary" href="tel:+393393638924">📞 Chiama</a>
     </div>
-    <div class="lp-footer-note">f.b.mdomenicotriolo@virgilio.it · Meda, disponibile entro 11km a domicilio</div>
+    <div style="margin-top:1.8rem; font-size:15px; color:#ffffff; font-weight:500; letter-spacing:0.3px;">📍 Mi trovi in Via Pace 34, Meda</div>
   </div>
 
 </div>
-
 </div>
-<script>function sendPrompt(t) { window.location.href = 'index.html'; }</script>
 </body>
 </html>
