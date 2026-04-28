@@ -50,14 +50,18 @@ body { background: #f4f4f8; min-height: 100vh; }
   .lp-section-sub { font-size: 14px; color: var(--color-text-secondary); margin: 0 0 1.8rem; }
 
   .lp-differ { background: #faeeda; border-radius: var(--border-radius-lg); padding: 2rem; margin-bottom: 2rem; }
-  .lp-differ-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.2rem; }
-  .lp-differ-col h4 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; margin: 0 0 1rem; }
+  .lp-differ-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 1.5rem; margin-top: 1.2rem; align-items: start; }
+  .lp-differ-col h4 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; margin: 0 0 0.6rem; }
   .lp-differ-col.no h4 { color: #888780; }
   .lp-differ-col.si h4 { color: #854F0B; }
-  .lp-differ-item { font-size: 13px; line-height: 1.5; padding: 8px 10px; border-radius: var(--border-radius-md); margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px; }
-  .lp-differ-col.no .lp-differ-item { background: #fff; color: #888780; }
-  .lp-differ-col.si .lp-differ-item { background: #fff; color: #412402; border-left: 2px solid #EF9F27; }
-  .lp-differ-icon { font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+  .lp-differ-col { display: contents; }
+  .lp-differ-col .lp-differ-header { display: block; }
+  .lp-differ-row { display: contents; }
+  .lp-differ-item { font-size: 13px; line-height: 1.5; padding: 10px 10px; border-radius: var(--border-radius-md); display: flex; align-items: center; gap: 8px; min-height: 48px; }
+  .lp-differ-item.no-item { background: #fff; color: #888780; }
+  .lp-differ-item.si-item { background: #fff; color: #412402; border-left: 2px solid #EF9F27; }
+  .lp-differ-icon { font-size: 12px; flex-shrink: 0; }
+  .lp-differ-headers { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.5rem; margin-top: 1.2rem; margin-bottom: 0.6rem; }
 
   .lp-services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 1.5rem; }
   @media (max-width: 600px) { .lp-services { grid-template-columns: 1fr; } }
@@ -115,23 +119,21 @@ body { background: #f4f4f8; min-height: 100vh; }
     <div class="lp-section-title">Personal trainer F.B.M vs palestra classica</div>
     <div class="lp-section-sub">Non è una questione di prezzo. È una questione di attenzione.</div>
     <div class="lp-differ">
+      <div class="lp-differ-headers">
+        <h4 style="font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:500; color:#888780;">In palestra</h4>
+        <h4 style="font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:500; color:#854F0B;">Con F.B.M</h4>
+      </div>
       <div class="lp-differ-grid">
-        <div class="lp-differ-col no">
-          <h4>In palestra</h4>
-          <div class="lp-differ-item"><span class="lp-differ-icon">—</span><span>Sala affollata, distrazioni continue</span></div>
-          <div class="lp-differ-item"><span class="lp-differ-icon">—</span><span>Scheda uguale per tutti</span></div>
-          <div class="lp-differ-item"><span class="lp-differ-icon">—</span><span>Timidezza e imbarazzo</span></div>
-          <div class="lp-differ-item"><span class="lp-differ-icon">—</span><span>Solo la parte sportiva</span></div>
-          <div class="lp-differ-item"><span class="lp-differ-icon">—</span><span>Nessun check sugli obiettivi</span></div>
-        </div>
-        <div class="lp-differ-col si">
-          <h4>Con F.B.M</h4>
-          <div class="lp-differ-item"><span class="lp-differ-icon">+</span><span>Studio privato, solo io e te</span></div>
-          <div class="lp-differ-item"><span class="lp-differ-icon">+</span><span>Percorso costruito su di te</span></div>
-          <div class="lp-differ-item"><span class="lp-differ-icon">+</span><span>Spazio riservato, zero giudizi</span></div>
-          <div class="lp-differ-item"><span class="lp-differ-icon">+</span><span>Sport + massaggi integrati</span></div>
-          <div class="lp-differ-item"><span class="lp-differ-icon">+</span><span>Check mensile sugli obiettivi</span></div>
-        </div>
+        <div class="lp-differ-item no-item"><span class="lp-differ-icon">—</span><span>Sala affollata, distrazioni continue</span></div>
+        <div class="lp-differ-item si-item"><span class="lp-differ-icon">+</span><span>Studio privato, solo io e te</span></div>
+        <div class="lp-differ-item no-item"><span class="lp-differ-icon">—</span><span>Scheda uguale per tutti</span></div>
+        <div class="lp-differ-item si-item"><span class="lp-differ-icon">+</span><span>Percorso costruito su di te</span></div>
+        <div class="lp-differ-item no-item"><span class="lp-differ-icon">—</span><span>Timidezza e imbarazzo</span></div>
+        <div class="lp-differ-item si-item"><span class="lp-differ-icon">+</span><span>Spazio riservato, zero giudizi</span></div>
+        <div class="lp-differ-item no-item"><span class="lp-differ-icon">—</span><span>Solo la parte sportiva</span></div>
+        <div class="lp-differ-item si-item"><span class="lp-differ-icon">+</span><span>Sport + massaggi integrati</span></div>
+        <div class="lp-differ-item no-item"><span class="lp-differ-icon">—</span><span>Nessun check sugli obiettivi</span></div>
+        <div class="lp-differ-item si-item"><span class="lp-differ-icon">+</span><span>Check mensile sugli obiettivi</span></div>
       </div>
     </div>
   </div>
@@ -141,7 +143,7 @@ body { background: #f4f4f8; min-height: 100vh; }
     <div class="lp-section-title">Cosa facciamo insieme</div>
     <div class="lp-section-sub">Ogni aspetto del tuo benessere, sotto un unico tetto.</div>
     <div class="lp-services">
-      <div class="lp-service"><div class="lp-service-stripe"></div><div class="lp-service-body"><h3>Preparazione atletica</h3><p>Per chi vuole migliorare le proprie performance sportive con un piano strutturato e progressivo, adattato al tuo sport e al tuo livello.</p><span class="lp-service-tag">Sportivi</span></div></div>
+      <div class="lp-service"><div class="lp-service-stripe"></div><div class="lp-service-body"><h3>Preparazione atletica</h3><p>Per chi vuole migliorare le proprie performance sportive con un piano strutturato e progressivo, adattato al tuo sport e al tuo livello. (anche per atleti professionisti)</p><span class="lp-service-tag">Sportivi</span></div></div>
       <div class="lp-service"><div class="lp-service-stripe"></div><div class="lp-service-body"><h3>Recupero funzionale</h3><p>Per chi deve rimettersi in moto dopo un infortunio, un'operazione o un lungo periodo di inattività. Si lavora con gradualità e precisione.</p><span class="lp-service-tag">Post-infortunio</span></div></div>
       <div class="lp-service"><div class="lp-service-stripe"></div><div class="lp-service-body"><h3>Allenamento su misura</h3><p>Schede personalizzate che tengono conto del tuo fisico, del tuo stile di vita e anche del tuo stato emotivo. Corpo e mente si allenano insieme.</p><span class="lp-service-tag">Per tutti</span></div></div>
       <div class="lp-service"><div class="lp-service-stripe"></div><div class="lp-service-body"><h3>Ginnastica ipopressiva</h3><p>Tecnica specifica per il pavimento pelvico, rivolta alle donne che vogliono lavorare su questa area in modo mirato e professionale.</p><span class="lp-service-tag">Donne</span></div></div>
